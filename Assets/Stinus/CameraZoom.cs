@@ -34,7 +34,7 @@ public class CameraZoom : MonoBehaviour
 
         float newZoom = Mathf.Lerp(MaxZoom, MinZoom, (GetGreatesDistance() + Border) / ZoomLerp);
 
-        ThisCamera.orthographicSize = newZoom;
+        ThisCamera.orthographicSize = Mathf.Lerp(ThisCamera.orthographicSize, newZoom, Time.deltaTime);
     }
 
     void Move()
